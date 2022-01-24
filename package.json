@@ -24,7 +24,13 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --mode=development --watch"
+    "start": "webpack --mode=development --watch",
+    "postinstall": "webpack --mode=production",
+    "webpack": "webpack --watch --mode=development"
+  },
+  "engines": {
+      "npm": "6.14.15",
+      "node": "6.9.0"
   },
   "repository": {
     "type": "git",
