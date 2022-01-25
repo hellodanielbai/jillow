@@ -30,7 +30,7 @@ class SessionForm extends React.Component {
                         {error}
                     </li>
                 ))}
-            </ul>
+            </ul> 
         );
     };
 
