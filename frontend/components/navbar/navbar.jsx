@@ -13,7 +13,7 @@ const Navbar = ({ currentUser, logout }) => {
 );
     const personalGreeting = () => (
         <hgroup className="header-group">
-            <Link>Buy</Link>
+            <Link to="#">Buy</Link>
             <div>Rent</div>
             <div>Sell</div>
             <div>Agent Finder</div>

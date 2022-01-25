@@ -11,7 +11,6 @@ import SessionForm from './session_form/session_form'
 
 const App = () => (
     <div>
-        {/* <h1>app works</h1> */}
         <NavbarContainer />
         <Switch>
             <AuthRoute path="/login" component={ LoginFormContainer } />
