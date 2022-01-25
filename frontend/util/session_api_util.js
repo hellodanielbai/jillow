@@ -18,6 +18,5 @@ export const logout = () => (
     $.ajax({
         method: 'DELETE',
         url: 'api/session',
-        data: { user }
     })
 )
