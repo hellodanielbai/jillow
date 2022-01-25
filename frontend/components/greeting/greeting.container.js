@@ -1,18 +1,16 @@
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import { logout } from '../../actions/session_actions';
 import Greeting from './greeting'
 
-const Greeting = ({ currentUser, logout }) => {
-    const sessionLinks = () => (
-        <nav className="login-signup">
-            <Link></Link>
-            <Link></Link>
-        </nav>
-    )
+const mSTP = ({ session, entities: { users } }) => {
+    return {
+        currentUser: users[session.id]
+    };
+};
 
-    return currentUser ? personalGreeting() : sessionLinks();
-}
+const mDTP = dispatch => ({
+    logout: () => dispatch(logout())
+});
 
-export default Greeting
+export default connect(mSTP, mDTP)(Greeting);
