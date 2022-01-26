@@ -2,6 +2,7 @@ class Api::SessionsController < ApplicationController
     skip_before_action :verify_authenticity_token
 
     def create
+        debugger
         @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
         if @user
             login!(@user)

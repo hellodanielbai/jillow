@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
-
 const Navbar = ({ currentUser, logout }) => {
     const sessionLinks = () => (
     // <nav className="login-signup">
@@ -10,7 +8,6 @@ const Navbar = ({ currentUser, logout }) => {
     //     &nbsp;or&nbsp;
     //     <Link to="/signup">Sign up!</Link>
     // </nav>
-
     <hgroup className="header-group">
         <Link to="#">Buy</Link>
         <div>Rent</div>

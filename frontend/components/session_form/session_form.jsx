@@ -4,7 +4,7 @@ class SessionForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            username: '',
+            email: '',
             password: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,6 +17,7 @@ class SessionForm extends React.Component {
     };
 
     handleSubmit(e) {
+        console.log(this.props)
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
@@ -42,11 +43,11 @@ class SessionForm extends React.Component {
                         <h1>JILLOW SESSIONFORM</h1>
                         
                         <div className="login-form">
-                            <label>Username:
+                            <label>Email:
                                 <input type="text"
                                     className="login-input"
-                                    value={this.state.username}
-                                    onChange={this.update('username')}
+                                    value={this.state.email}
+                                    onChange={this.update('email')}
                                 />
                             </label>
 
