@@ -11,8 +11,8 @@ const mSTP = (state, ownProps) => {
 };
 
 const mDTP = dispatch => ({
-    // logout: () => dispatch(logout()),
-    login: (modalState) => dispatch(openModal(modalState))
+    login: (modalState) => dispatch(openModal(modalState)),
+    logout: () => dispatch(logout())
 });
 
 export default connect(mSTP, mDTP)(Navbar);

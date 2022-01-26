@@ -1,6 +1,7 @@
 //React
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { logout } from './actions/session_actions'
 
 //Components
 import Root from './components/root';
@@ -25,6 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const root = document.getElementById('root')
     window.logoutCurrentUser = logoutCurrentUser
+    window.logout = logout
     window.store = store
+    window.getState = store.getState
     ReactDOM.render(<Root store={store} />, root)
 });

@@ -1,4 +1,13 @@
-.navbar1 {
+.navbar-left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    max-width: 1280px;
+    margin: auto;
+}
+
+.navbar-right {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,11 +22,16 @@
     text-decoration: none;
     font-family: sans-serif;
     color: black;
+    border: none;
     
 }
 
 .navbar-item:hover {
     color: blue;
+}
+
+.navbar-item:focus {
+    border: blue;
 }
 
 .navbar-title {

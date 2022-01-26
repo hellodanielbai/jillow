@@ -1,0 +1,22 @@
+.jillow-title {
+    font-family: "Ivar Headline", "Ivar Headline Subset", "Adjusted Times", "Adjusted Times New Roman", "Times New Roman", serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.login-form-container {
+    display: table-cell;
+    width: 250px;
+    height: 200px;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+.signup-form-container {
+    border: red
+}
+
+#email-password {
+    font-size: 20px;
+}
