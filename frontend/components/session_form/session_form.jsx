@@ -40,7 +40,7 @@ class SessionForm extends React.Component {
             <ul>
                 <div className="login-form-container">
                     <form className="login-form-box" onSubmit={this.handleSubmit}>
-                        <h1>JILLOW SESSIONFORM</h1>
+                        <h1>Session Login</h1>
                         
                         <div className="login-form">
                             <label>Email:
