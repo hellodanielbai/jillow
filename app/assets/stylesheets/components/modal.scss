@@ -4,13 +4,26 @@
     bottom: 0;
     right: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
 }
 
-.modal-child {
+.modal-child-login,
+.modal-child-signup {
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 415px;
+    height: 585px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    box-shadow: -1px 4px 6px 1px rgba(0, 0, 0, 0.09);
     transform: translate(-50%, -50%);
+    font-size: 16px;
+    padding: 40px 0 40px 0;
+    z-index: 10000;
 }

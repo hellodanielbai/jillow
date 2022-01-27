@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import Navbar from './navbar'
-import { openModal} from '../../actions/modal_actions';
+import { openModal } from '../../actions/modal_actions';
 
 const mSTP = (state, ownProps) => {
     return {
@@ -11,7 +11,7 @@ const mSTP = (state, ownProps) => {
 };
 
 const mDTP = dispatch => ({
-    login: (modalState) => dispatch(openModal(modalState)),
+    login: () => dispatch(openModal('login')),
     logout: () => dispatch(logout())
 });
 

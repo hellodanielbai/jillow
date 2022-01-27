@@ -19,7 +19,7 @@ const Navbar = ({ currentUser, login, logout }) => {
                 <Link className="navbar-item" to="#">Manage Rentals</Link>
                 <Link className="navbar-item" to="#">Advertise</Link>
                 <Link className="navbar-item" to="#">Help</Link>
-                <Link className="navbar-item" to="/login" onClick={() => login()}>Sign in</Link>
+                <button className="navbar-item" onClick={() => login()}>Sign in</button>
             </div>
         </hgroup>
     );
