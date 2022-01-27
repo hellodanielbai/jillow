@@ -13,10 +13,6 @@ const App = () => (
     <div>
         <Modal />
         <NavbarContainer />
-        {/* <Switch>
-            <AuthRoute path="/login" component={ LoginFormContainer } />
-            <AuthRoute path="/signup" component={ SignupFormContainer } />
-        </Switch> */}
     </div>
 );
 
