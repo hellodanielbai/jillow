@@ -1,5 +1,11 @@
 class Api::ListingsController < ApplicationController
     def index
+        if params[:userId]
+            @user = User.find(params[:userId])
+            @listings = @user.savedlistings
+        else
+            @listings = Listing.all
+        end
         render :index
     end
 
@@ -10,12 +16,15 @@ class Api::ListingsController < ApplicationController
 
     def create
         
-        
     end
 
     def update
 
     end
+
+    # def applyFilters
+
+    # end
 
 
     private

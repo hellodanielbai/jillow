@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const root = document.getElementById('root')
-    window.logoutCurrentUser = logoutCurrentUser
     window.logout = logout
     window.store = store
     window.getState = store.getState

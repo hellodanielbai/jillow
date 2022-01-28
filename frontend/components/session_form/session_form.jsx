@@ -1,4 +1,5 @@
 import React from 'react';
+import { openModal } from '../../actions/modal_actions';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -17,10 +18,17 @@ class SessionForm extends React.Component {
     };
 
     handleSubmit(e) {
-        console.log(this.props)
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user)
+    };
+
+    handleClick(state) {
+        return (e) => {
+            console.log(state)
+            e.preventDefault()
+            this.props.openModal(state)
+        }
     };
 
     renderErrors() {
@@ -35,39 +43,49 @@ class SessionForm extends React.Component {
         );
     };
 
+
     render() {
         let formInput = {}
         if (this.props.formType === 'login') {
             formInput['title'] = 'Sign in'
-            formInput['className'] = 'login-form-container'
+            formInput['className'] = 'modal-child-login'
         } else {
-            formInput['title'] = 'Signup'
-            formInput['className'] = 'signup-form-container'
+            formInput['title'] = 'Submit'
+            formInput['className'] = 'modal-child-signup'
         }
 
         return(
             <ul>
-                <div className={formInput['className']}>
+                <div>
                     <form className={formInput['className']} onSubmit={this.handleSubmit}>
                         <h1 className="jillow-title">Welcome to Jillow</h1>
-                        <div>
-                            <label id="email-password">Email
-                                <input type="text"
-                                    className="user-input"
-                                    value={this.state.email}
-                                    onChange={this.update('email')}
-                                />
-                            </label>
-                            <br></br>
-                            <label id="email-password">Password
-                                <input type="password"
-                                    className="user-input"
-                                    value={this.state.password}
-                                    onChange={this.update('password')}
-                                />
-                            </label>
 
-                            <input className="session-submit" type="submit" value={formInput['title']} />
+                        <div>
+                            <button id="sign-in" onClick={this.handleClick('login')}>Sign In</button>
+                        </div>
+
+                        <div>
+                            <button id="sign-up" onClick={this.handleClick('signup')}>New Account</button>
+                        </div>
+
+                        <div>
+                            <label id="email-password">Email</label>
+                            <input type="text"
+                                className="user-input"
+                                value={this.state.email}
+                                onChange={this.update('email')}
+                            />
+                            
+                            <br></br>
+
+                            <label id="email-password">Password</label>
+                            <input type="password"
+                                className="user-input"
+                                value={this.state.password}
+                                onChange={this.update('password')}
+                            />
+
+                            <input className="modal-submit" type="submit" value={formInput['title']} />
                         </div>
                     </form>
                 </div>

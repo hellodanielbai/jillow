@@ -3,19 +3,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { login, logout } from '../../actions/session_actions';
 import SessionForm from './session_form'
+import { openModal } from '../../actions/modal_actions';
 
 const mSTP = ({ errors }) => {
     return {
         errors: errors.session,
-        formType: 'login',
-        navLink: <Link to="/signup">sign up here</Link>,
+        formType: 'login'
     };
 };
 
 const mDTP = dispatch => {
     return {
         processForm: (user) => dispatch(login(user)),
-        logout: () => dispatch(logout())
+        logout: () => dispatch(logout()),
+        openModal: (type) => dispatch(openModal(type))
     };
 };
 

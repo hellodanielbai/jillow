@@ -13,8 +13,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 415px;
-    height: 585px;
+    width: 400px;
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,4 +26,80 @@
     font-size: 16px;
     padding: 40px 0 40px 0;
     z-index: 10000;
+}
+
+.jillow-title {
+    font-family: "Ivar Headline", "Ivar Headline Subset", "Adjusted Times", "Adjusted Times New Roman", "Times New Roman", serif;
+    position: absolute;
+    top: 30px;
+    left: 80px;
+    font-weight: 700px;
+    font-size: 28px;
+    line-height: 32px;
+}
+
+
+.modal-submit {
+    align-items: center;
+    background-color: rgb(0, 106, 255);
+    border-bottom-color: rgb(0, 106, 255);
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(0, 106, 255);
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    display: flex;
+    font-family: "Open Sans", "Adjusted Arial", Tahoma, Geneva, sans-serif;
+    font-size: 16px;
+    font-weight: 200px;
+    height: 44px;
+    justify-content: center;
+    line-height: 24px;
+    position: relative;
+    transition-duration: 0.2s;
+    width: 240px;
+}
+
+.modal-submit:hover {
+    background-color: rgb(13, 69, 153);
+    border-bottom-color: rgb(13, 69, 153);
+}
+
+#email-password {
+    font-size: 16px;
+    display: flex;
+}
+
+#sign-in {
+    position: absolute;
+    top: 120px;
+    left: 40px;
+    border: none;
+}
+
+#sign-up {
+    position: absolute;
+    top: 120px;
+    left: 120px;
+    border: none;
+}
+
+#sign-in:hover,
+#sign-up:hover {
+    color:rgb(0, 106, 255);
+}
+
+#sign-in:focus,
+#sign-up:focus {
+    border-bottom-color: rgb(0, 106, 255);
+}
+
+.user-input {
+    border-style: solid;
+    border-color: rgb(209, 209, 213);
+}
+
+.user-input:hover {
+    border-color: rgb(0, 106, 255)
 }
