@@ -10,6 +10,7 @@ class Api::ListingsController < ApplicationController
 
     def create
         
+        
     end
 
     def update
@@ -19,6 +20,6 @@ class Api::ListingsController < ApplicationController
 
     private
     def listing_params
-        params.require(:listing).permit(:address, :state, :city, :zipcode, :price, :sqft, :bd, :ba, :lot_size, :description, :yr_built, :lat, :lng, :is_rent)
+        params.require(:listing).permit(:address, :state, :city, :zipcode, :price, :sqft, :bd, :ba, :lot_size, :description, :yr_built, :lat, :lng, :is_rent, photos: [])
     end
 end

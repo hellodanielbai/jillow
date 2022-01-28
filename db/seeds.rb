@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+jj = User.create( email: 'jj', password: 'password')
+
+file = open('https://jillow-seed.s3.us-west-1.amazonaws.com/dog.svg')
+
+jj.photo.attach(io: file, filename: 'dog.svg')

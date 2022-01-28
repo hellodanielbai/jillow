@@ -7,6 +7,16 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
     attr_reader :password
 
+    has_one_attached :photo
+
+    has_many :saves,
+        foreign_key: :user_id
+
+    has_many :savedlistings,
+        through: :saves,
+        source: :listing
+
+
     def self.find_by_credentials(email, password)
         @user = User.find_by(email: email)
         if @user && @user.is_password?(password)
