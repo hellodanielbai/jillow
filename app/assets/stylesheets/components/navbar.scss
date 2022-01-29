@@ -1,3 +1,8 @@
+.navbar-content {
+    display: flex;
+
+}
+
 .navbar-left {
     display: flex;
     justify-content: space-between;
@@ -17,7 +22,7 @@
 }
 
 .navbar-item {
-    padding: 14px;
+    margin: 6px;
     font-size: 18px;
     text-decoration: none;
     font-family: sans-serif;
@@ -36,6 +41,7 @@
 
 .navbar-title {
     font-size: 40px;
+    margin: 40px;
     font-family: serif;
     font-weight: bold;
     color: #006aff;

@@ -17,7 +17,6 @@
     height: 500px;
     display: flex;
     justify-content: center;
-    align-items: center;
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 5px;
@@ -28,15 +27,23 @@
     z-index: 10000;
 }
 
+.modal-content {
+    display: flex-column;
+}
+
 .jillow-title {
     font-family: "Ivar Headline", "Ivar Headline Subset", "Adjusted Times", "Adjusted Times New Roman", "Times New Roman", serif;
-    position: absolute;
-    top: 30px;
-    left: 80px;
     font-weight: 700px;
     font-size: 28px;
     line-height: 32px;
 }
+
+.signinnout {
+    display: flex;
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
 
 
 .modal-submit {
@@ -72,27 +79,24 @@
 }
 
 #sign-in {
-    position: absolute;
-    top: 120px;
-    left: 40px;
+    background-color: transparent;
     border: none;
 }
 
 #sign-up {
-    position: absolute;
-    top: 120px;
-    left: 120px;
+    background-color: transparent;
     border: none;
 }
 
 #sign-in:hover,
 #sign-up:hover {
     color:rgb(0, 106, 255);
+    border-bottom: 2px, rgb(0, 106, 255);
 }
 
 #sign-in:focus,
 #sign-up:focus {
-    border-bottom-color: rgb(0, 106, 255);
+    border-bottom: 2px, rgb(0, 106, 255);
 }
 
 .user-input {

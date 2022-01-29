@@ -13,6 +13,10 @@ const App = () => (
     <div>
         <Modal />
         <NavbarContainer />
+        <Switch>
+            /listings/
+            /listings/:listingId
+        </Switch>
     </div>
 );
 

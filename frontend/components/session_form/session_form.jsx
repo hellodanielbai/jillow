@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState, setState } from 'react'
 import { openModal } from '../../actions/modal_actions';
 
 class SessionForm extends React.Component {
@@ -20,7 +21,7 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user)
+        this.props.processForm(user);
     };
 
     handleClick(state) {
@@ -28,7 +29,16 @@ class SessionForm extends React.Component {
             console.log(state)
             e.preventDefault()
             this.props.openModal(state)
-        }
+        };
+    };
+
+    handleDemo() {
+        let DemoUser;
+        DemoUser = { email: "demo", password: "password"}  ;  
+        return (e) => {
+            e.preventDefault()
+            this.props.login(DemoUser)
+        };
     };
 
     renderErrors() {
@@ -55,18 +65,20 @@ class SessionForm extends React.Component {
         }
 
         return(
-            <ul>
-                <div>
-                    <form className={formInput['className']} onSubmit={this.handleSubmit}>
+            <div>
+                <form className={formInput['className']} onSubmit={this.handleSubmit}>
+                    <div className="modal-content">
                         <h1 className="jillow-title">Welcome to Jillow</h1>
-
-                        <div>
-                            <button id="sign-in" onClick={this.handleClick('login')}>Sign In</button>
+                        <div className="signinnout">
+                            <div>
+                                <button id="sign-in" onClick={this.handleClick('login')}>Sign In</button>
+                            </div>
+                            <div>
+                                <button id="sign-up" onClick={this.handleClick('signup')}>New Account</button>
+                            </div>
                         </div>
 
-                        <div>
-                            <button id="sign-up" onClick={this.handleClick('signup')}>New Account</button>
-                        </div>
+                        <hr></hr>
 
                         <div>
                             <label id="email-password">Email</label>
@@ -75,21 +87,21 @@ class SessionForm extends React.Component {
                                 value={this.state.email}
                                 onChange={this.update('email')}
                             />
-                            
-                            <br></br>
 
+                            <br></br>
                             <label id="email-password">Password</label>
                             <input type="password"
                                 className="user-input"
                                 value={this.state.password}
                                 onChange={this.update('password')}
                             />
-
                             <input className="modal-submit" type="submit" value={formInput['title']} />
                         </div>
-                    </form>
-                </div>
-            </ul>
+
+                        <input className="demo-submit" type="submit" onClick={this.handleDemo()} value="Demo Login" />
+                    </div>
+                </form>
+            </div>
         );
     };
 };

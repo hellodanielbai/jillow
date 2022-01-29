@@ -15,6 +15,7 @@ const mSTP = ({ errors }) => {
 const mDTP = dispatch => {
     return {
         processForm: (user) => dispatch(login(user)),
+        login: (user) => dispatch(login(user)),
         logout: () => dispatch(logout()),
         openModal: (type) => dispatch(openModal(type))
     };
