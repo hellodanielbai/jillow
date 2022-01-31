@@ -44,7 +44,27 @@
     margin-bottom: 12px;
 }
 
+.sign-in-wrapper {
+    padding-bottom: 15px;
+    border-bottom: 2px;
+}
 
+.sign-up-wrapper {
+    padding-bottom: 15px;
+    border-bottom: 2px;
+}
+
+.signinnout {
+    display: flex;
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+.signinnout {
+    display: flex;
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
 
 .modal-submit {
     align-items: center;
@@ -106,4 +126,8 @@
 
 .user-input:hover {
     border-color: rgb(0, 106, 255)
+}
+
+.divider {
+    position: absolute;
 }

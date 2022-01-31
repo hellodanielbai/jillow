@@ -1,8 +1,7 @@
-export const fetchAllListings = (filter) => (
+export const fetchAllListings = () => (
     $.ajax({
         method: 'GET',
-        url: '/api/listings',
-        filter
+        url: '/api/listings'
     })
 );
 
@@ -10,7 +9,6 @@ export const fetchSavedListings = (userId) => (
     $.ajax({
         method: 'GET',
         url: '/api/listings',
-        userId
     })
 );
 
@@ -20,7 +18,6 @@ export const fetchListing = (listingId) => (
         url: `api/listings/${listingId}`
     })
 );
-
 
 export const createListing = (data) => (
     $.ajax({

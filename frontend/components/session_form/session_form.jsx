@@ -22,6 +22,7 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
+        
     };
 
     handleClick(state) {
@@ -53,7 +54,6 @@ class SessionForm extends React.Component {
         );
     };
 
-
     render() {
         let formInput = {}
         if (this.props.formType === 'login') {
@@ -78,7 +78,7 @@ class SessionForm extends React.Component {
                             </div>
                         </div>
 
-                        <hr></hr>
+                        <hr className="divider"></hr>
 
                         <div>
                             <label id="email-password">Email</label>
@@ -89,12 +89,14 @@ class SessionForm extends React.Component {
                             />
 
                             <br></br>
+                            <br></br>
                             <label id="email-password">Password</label>
                             <input type="password"
                                 className="user-input"
                                 value={this.state.password}
                                 onChange={this.update('password')}
                             />
+
                             <input className="modal-submit" type="submit" value={formInput['title']} />
                         </div>
 

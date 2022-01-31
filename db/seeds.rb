@@ -8,6 +8,8 @@
 
 
 DemoUser = User.create(email: "demo", password: "password")
+DemoListing = Listing.create!(address: "apple st", state: "CA", city: "Los Angeles", zipcode: 1234, price: 1000, sqft: 200, bd: 1, ba: 1.5, lat: 20, lng: 30, is_rent: true)
+
 
 # jj = User.create( email: 'jj', password: 'password')
 # file = open('https://jillow-seed.s3.us-west-1.amazonaws.com/dog.svg')
