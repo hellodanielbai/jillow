@@ -21,8 +21,6 @@ export const receiveErrors = (errors) => ({
     errors
 });
 
-
-
 //thunk actions
 export const fetchAllListings = () => dispatch => (
     ListingsAPIUtil.fetchAllListings().then(listings => (

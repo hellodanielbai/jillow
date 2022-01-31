@@ -1,16 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchAllListings } from '../../actions/listings_actions';
+import { fetchListing } from '../../actions/listings_actions';
 import ListingShow  from './listing_show'
 import { openModal } from '../../actions/modal_actions';
-import { updateCurrentListing } from '../../actions/listings_actions';
 
 
 const mSTP = (state, ownProps) => {
     return {
-        currentListing: Object.values(state.entities.listings.currentListing),
-        allListings: Object.values(state.entities.listings)
+        selectedListing: state.entities.listings[ownProps.listingId]
     };
 };
 
-export default connect(mSTP)(ListingShow);
+const mDTP = dispatch => {
+    return {
+        // openModal: (type) => dispatch(openModal(type)),
+        fetchListing: (listingId) => dispatch(fetchListing(listingId))
+    };
+};
+
+export default connect(mSTP, mDTP)(ListingShow);

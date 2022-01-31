@@ -2,7 +2,7 @@ import React from 'react';
 
 const ListingIndexItem = (props) => {
     return (
-        <li>
+        <li className='anyListing'>
             {props.listing.picture}
             {props.listing.price}
             {props.listing.bd}

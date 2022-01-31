@@ -1,22 +1,19 @@
 import React from "react";
-import { openModal, closeModal } from "../../actions/modal_actions";
-import { fetchListing } from "../../util/listing_util";
-
 
 class ListingShow extends React.Component {
     constructor(props) {
         super(props)
+        console.log(this.props)
     }
 
     componentDidMount() {
-        fetchListing(this.props.currentListing);
+        this.props.fetchListing(this.props.listingId);
     }
 
     render() {
-        if (!this.props.listing) return null
         return (
-            <div>
-                HELLO
+            <div className="selectedListing">
+                {this.props.selectedListing.address}
             </div>
         )
     }

@@ -9,6 +9,7 @@
 
 DemoUser = User.create(email: "demo", password: "password")
 DemoListing = Listing.create!(address: "apple st", state: "CA", city: "Los Angeles", zipcode: 1234, price: 1000, sqft: 200, bd: 1, ba: 1.5, lat: 20, lng: 30, is_rent: true)
+DemoListing2 = Listing.create!(address: "orange st", state: "CA", city: "Los Angeles", zipcode: 4321, price: 2000, sqft: 400, bd: 3, ba: 3, lat: 40, lng: 50, is_rent: false)
 
 
 # jj = User.create( email: 'jj', password: 'password')
