@@ -17,8 +17,13 @@ class Listings extends React.Component {
         return (
             <ul>
                 {this.props.listings.map(listing => {
-                    return <Link><ListingIndexItem key={listing.id} listing={listing}/></Link>
+                    return <Link to={`/listings/${listing.id}`}><ListingIndexItem key={listing.id} listing={listing}/></Link>
                 })}
+
+
+                {/* {this.props.listings.map(listing => {
+                    return <Link onClick={() => {this.props.openModal("viewListing")}} to={`/listings/${listing.id}`}><ListingIndexItem key={listing.id} listing={listing}/></Link>
+                })} */}
             </ul>
         )
     }

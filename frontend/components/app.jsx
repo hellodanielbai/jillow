@@ -13,7 +13,7 @@ const App = () => (
         <Modal />
         <NavbarContainer />
         <Switch>
-            <Route exact path="/listings" component={ListingsContainer} />
+            <Route path="/listings" component={ListingsContainer} />
             {/* <Route exact path="listings/:listingsId" component={} /> */}
         </Switch>
     </div>

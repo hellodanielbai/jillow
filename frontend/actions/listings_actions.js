@@ -4,6 +4,7 @@ export const RECEIVE_ALL_LISTINGS = "RECEIVE_ALL_LISTINGS"
 export const RECEIVE_LISTING = "RECEIVE_LISTING"
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS"
 
+
 //regular actions
 export const receiveAllListings = (listings) => ({
     type: RECEIVE_ALL_LISTINGS,
@@ -19,6 +20,8 @@ export const receiveErrors = (errors) => ({
     type: RECEIVE_ERRORS,
     errors
 });
+
+
 
 //thunk actions
 export const fetchAllListings = () => dispatch => (

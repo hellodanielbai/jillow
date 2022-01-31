@@ -3,14 +3,14 @@ class User < ApplicationRecord
     validates :password, length: {minimum: 6}, allow_nil: true
     validates :password_digest, presence: true
     validates :session_token, presence: true, uniqueness: true
-    
     after_initialize :ensure_session_token
     attr_reader :password
 
     has_one_attached :photo
 
     has_many :saves,
-        foreign_key: :user_id
+        foreign_key: :user_id,
+        class_name: :Save
 
     has_many :savedlistings,
         through: :saves,

@@ -87,6 +87,11 @@ class SessionForm extends React.Component {
                                 value={this.state.email}
                                 onChange={this.update('email')}
                             />
+                            <br></br>
+                            
+                            <div>
+                                {this.renderErrors()}
+                            </div>
 
                             <br></br>
                             <br></br>
