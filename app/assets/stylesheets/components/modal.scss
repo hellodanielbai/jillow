@@ -15,20 +15,20 @@
     left: 50%;
     width: 400px;
     height: 500px;
-    display: flex;
-    justify-content: center;
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 5px;
     box-shadow: -1px 4px 6px 1px rgba(0, 0, 0, 0.09);
     transform: translate(-50%, -50%);
     font-size: 16px;
-    padding: 40px 0 40px 0;
+    padding: 40px 30px 40px 30px;
     z-index: 10000;
 }
 
 .modal-content {
-    display: flex-column;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .jillow-title {
@@ -36,10 +36,12 @@
     font-weight: 700px;
     font-size: 28px;
     line-height: 32px;
+    text-align: center;
 }
 
 .signinnout {
     display: flex;
+    align-items: flex-start;
     margin-top: 24px;
     margin-bottom: 12px;
 }
@@ -52,12 +54,6 @@
 .sign-up-wrapper {
     padding-bottom: 15px;
     border-bottom: 2px;
-}
-
-.signinnout {
-    display: flex;
-    margin-top: 24px;
-    margin-bottom: 12px;
 }
 
 .signinnout {
@@ -85,12 +81,17 @@
     line-height: 24px;
     position: relative;
     transition-duration: 0.2s;
-    width: 240px;
+    width: 100%;
+    margin: 20px 0;
 }
 
 .modal-submit:hover {
     background-color: rgb(13, 69, 153);
     border-bottom-color: rgb(13, 69, 153);
+}
+
+.input-parent {
+    margin-left: 0 40px;
 }
 
 #email-password {
@@ -114,14 +115,18 @@
     border-bottom: 2px, rgb(0, 106, 255);
 }
 
-#sign-in:focus,
-#sign-up:focus {
-    border-bottom: 2px, rgb(0, 106, 255);
+.tab-clicked {
+    border-bottom: 5px solid rgb(0, 106, 255);
+    padding-bottom: 12px;
 }
 
 .user-input {
     border-style: solid;
     border-color: rgb(209, 209, 213);
+    height: 30px;
+    border-radius: 6px;
+    width: 360px;
+    margin-top: 10px;
 }
 
 .user-input:hover {
@@ -130,4 +135,19 @@
 
 .divider {
     position: absolute;
+    width: 400px;
+    top: 120px;
+}
+
+.demo-submit {
+    margin-top: 40px;
+    width: 360px;
+}
+
+.header-tab-container {
+    width: 100%;
+}
+
+.bottom-divider {
+    width: 400px;
 }

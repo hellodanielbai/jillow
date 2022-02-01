@@ -35,12 +35,13 @@ class Listings extends React.Component {
         console.log(this.props.listings)
         if (!this.props.listings) return null
         return (
-            <div>
+            <div className='listings'>
                 { this.state.selectedListing && (
                     < ListingShowContainer closeModal={this.closeModal} listingId={this.state.selectedListing} /> 
-                )}
+                    )}
 
-                <ul>
+                <div className='map'></div>
+                <ul className='listings-parent'>
                     {this.props.listings.map(listing => {
                         return (
                             <div id={listing.id} onClick={this.handleClick} to={`/listings/${listing.id}`} key={listing.id}><ListingIndexItem listing={listing}/></div>

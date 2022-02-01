@@ -8,8 +8,14 @@
     justify-content: space-between;
     align-items: center;
     height: 70px;
-    max-width: 1280px;
+    width: 100%;
     margin: auto;
+}
+
+.navbar-items-parent {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%
 }
 
 .navbar-right {
@@ -17,18 +23,18 @@
     justify-content: space-between;
     align-items: center;
     height: 70px;
-    max-width: 1280px;
+    width: 100%;
     margin: auto;
 }
 
 .navbar-item {
-    margin: 6px;
     font-size: 18px;
     text-decoration: none;
     font-family: sans-serif;
     color: black;
     border: none;
-    
+    background-color: transparent;
+    cursor: pointer;
 }
 
 .navbar-item:hover {

@@ -16,7 +16,7 @@ const Navbar = ({ currentUser, login, logout }) => {
     const sessionClosed = () => (
         <div className="navbar-content">
             <hgroup className="navbar-left">
-                <div>
+                <div className="navbar-items-parent">
                     <Link className="navbar-item" to="/buy">Buy</Link>
                     <Link className="navbar-item" to="/rent">Rent</Link>
                     <Link className="navbar-item" to="/sell">Sell</Link>
@@ -24,10 +24,10 @@ const Navbar = ({ currentUser, login, logout }) => {
                 <div>
                     <div className="navbar-title">Jillow</div>
                 </div>
-                <div>
+                <div className="navbar-items-parent">
                     <a className="navbar-item" href="https://github.com/hellodanielbai">GitHub</a>
                     <a className="navbar-item" href="https://github.com/hellodanielbai">LinkedIn</a>
-                    <button className="navbar-item" onClick={() => login()}>Sign in</button>
+                    <a className="navbar-item" onClick={() => login()}>Sign in</a>
                 </div>
             </hgroup>
         </div>
@@ -35,8 +35,8 @@ const Navbar = ({ currentUser, login, logout }) => {
     
     const sessionOpened = () => (
         <div className="navbar-content">
-            <hgroup className="navbar-right">
-                <div>
+            <hgroup className="navbar-left">
+                <div className="navbar-items-parent">
                     <Link className="navbar-item" to="#">Buy</Link>
                     <Link className="navbar-item" to="#">Rent</Link>
                     <Link className="navbar-item" to="#">Sell</Link>
@@ -44,14 +44,14 @@ const Navbar = ({ currentUser, login, logout }) => {
                 <div>
                     <div className="navbar-title">Jillow</div>
                 </div>
-                <div>
+                <div className="navbar-items-parent">
                     <a className="navbar-item" href="https://github.com/hellodanielbai">GitHub</a>
                     <a className="navbar-item" href="https://github.com/hellodanielbai">LinkedIn</a>
                     {/* <div className="dropdown">
                         <div>
                             <button className="navbar-item" onClick={() => handleOnClick()}>DropDown</button>
                         </div> */}
-                        <button className="navbar-item" onClick={() => logout()}>Sign Out</button>
+                        <a className="navbar-item" onClick={() => logout()}>Sign Out</a>
                     {/* </div> */}
                 </div>
             </hgroup>

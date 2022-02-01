@@ -1,7 +1,26 @@
-.anyListing {
-    background-color: red
+.listings {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
+.map {
+    background-color: yellowgreen;
+}
+
+.listings-parent {
+    margin: 0 20px;
+}
+
+.anyListing {
+    height: 200px;
+    border: 1px solid grey;
+    border-bottom: 3px solid blue;
+    margin-bottom: 10px;
+}
+
+.listing-data {
+    padding-left: 10px;
+}
 
 .selectedListing {
     position: absolute;
