@@ -8,7 +8,7 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 const mSTP = ({ errors }) => {
     return {
         errors: errors.session,
-        formType: 'login'
+        formType: 'login',
     };
 };
 

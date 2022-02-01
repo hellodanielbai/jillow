@@ -11,5 +11,4 @@ class Listing < ApplicationRecord
     has_many :savers,
         through: :saves,
         source: :saver
-
 end

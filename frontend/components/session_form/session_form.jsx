@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -21,9 +22,10 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
-        // only if there are no errors
-        // this.props.closeModal();
+        this.props.processForm(user)
+            .then( () => {
+                this.props.closeModal();
+            })
     };
 
     handleClick(state) {
@@ -53,7 +55,7 @@ class SessionForm extends React.Component {
 
     renderErrors() {
         return(
-            <ul>
+            <ul className="errors">
                 {this.props.errors.map((error, i) => (
                     <li key={`error-${i}`}>
                         {error}
@@ -101,11 +103,9 @@ class SessionForm extends React.Component {
                                 onChange={this.update('email')}
                             />
                             <br></br>
-                            
                             <div>
                                 {this.renderErrors()}
                             </div>
-
                             <br></br>
                             <br></br>
                             <label id="email-password">Password</label>
@@ -115,11 +115,12 @@ class SessionForm extends React.Component {
                                 placeholder="Enter password"
                                 onChange={this.update('password')}
                             />
-
-                            <input className="modal-submit" type="submit" value={formInput['title']} />
-                        </div>
+                            <input className="modal-submit" type="submit" value={formInput['title']} /> 
+                        </div>    
                         <hr className="bottom-divider"></hr>
-
+                        <div>
+                            <label className="connect-tag">Or connect with:</label>
+                        </div>
                         <input className="demo-submit" type="submit" onClick={this.handleDemo()} value="Demo Login" />
                     </div>
                 </form>

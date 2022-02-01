@@ -11,15 +11,33 @@
     margin: 0 20px;
 }
 
-.anyListing {
+.listing-index-item {
+    font-family: "Open Sans",Gotham,gotham,Tahoma,Geneva,sans-serif;
     height: 200px;
     border: 1px solid grey;
-    border-bottom: 3px solid blue;
+    border-bottom: 3px solid #006AFF;
     margin-bottom: 10px;
+    padding-left: 10px;
+    cursor: pointer;
 }
 
-.listing-data {
-    padding-left: 10px;
+.listing-index-item-price {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 22px;
+    margin-bottom: 0;
+}
+
+.listing-index-item-info {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 16px;
+}
+
+.listing-index-item-address {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 14px;
 }
 
 .selectedListing {
@@ -39,4 +57,3 @@
     padding: 40px 0 40px 0;
     z-index: 10000;
 }
-

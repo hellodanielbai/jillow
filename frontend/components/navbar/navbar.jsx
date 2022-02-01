@@ -3,21 +3,11 @@ import { Link } from 'react-router-dom';
 
 const Navbar = ({ currentUser, login, logout }) => {
 
-    const handleOnClick = () => {
-        return (
-            <div>
-                <options>
-                    hello
-                </options>
-            </div>
-        )
-    }
-
     const sessionClosed = () => (
         <div className="navbar-content">
             <hgroup className="navbar-left">
                 <div className="navbar-items-parent">
-                    <Link className="navbar-item" to="/buy">Buy</Link>
+                    <Link className="navbar-item" to="/listings">Buy</Link>
                     <Link className="navbar-item" to="/rent">Rent</Link>
                     <Link className="navbar-item" to="/sell">Sell</Link>
                 </div>
