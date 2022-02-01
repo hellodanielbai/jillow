@@ -13,7 +13,6 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
     return {
-        // openModal: (type) => dispatch(openModal(type)),
         fetchListing: (listingId) => dispatch(fetchListing(listingId))
     };
 };

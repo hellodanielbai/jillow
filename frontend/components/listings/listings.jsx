@@ -32,6 +32,7 @@ class Listings extends React.Component {
     };
 
     render() {
+        console.log(this.props.listings)
         if (!this.props.listings) return null
         return (
             <div>

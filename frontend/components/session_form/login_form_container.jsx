@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { login, logout } from '../../actions/session_actions';
 import SessionForm from './session_form'
-import { openModal } from '../../actions/modal_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mSTP = ({ errors }) => {
     return {
@@ -17,7 +17,8 @@ const mDTP = dispatch => {
         processForm: (user) => dispatch(login(user)),
         login: (user) => dispatch(login(user)),
         logout: () => dispatch(logout()),
-        openModal: (type) => dispatch(openModal(type))
+        openModal: (type) => dispatch(openModal(type)),
+        closeModal: (type) => dispatch(closeModal(type))
     };
 };
 

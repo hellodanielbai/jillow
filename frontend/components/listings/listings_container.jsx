@@ -5,7 +5,6 @@ import Listings  from './listings'
 import { openModal } from '../../actions/modal_actions';
 
 
-
 const mSTP = (state, ownProps) => {
     return {
         listings: Object.values(state.entities.listings)

@@ -1,6 +1,4 @@
 import React from 'react';
-import { useState, setState } from 'react'
-import { openModal } from '../../actions/modal_actions';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -22,7 +20,7 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
-        
+        // this.props.closeModal();
     };
 
     handleClick(state) {
