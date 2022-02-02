@@ -39,11 +39,11 @@ class Listings extends React.Component {
                     < ListingShowContainer closeModal={this.closeModal} listingId={this.state.selectedListing} /> 
                     )}
 
-                <div className='map'></div>
+                <div className='map'>SUPER SICK MAP API</div>
                 <ul className='listings-parent'>
                     {this.props.listings.map(listing => {
                         return (
-                            <div id={listing.id} onClick={this.handleClick} to={`/listings/${listing.id}`} key={listing.id}><ListingIndexItem listing={listing}/></div>
+                            <div className="listings-child" id={listing.id} onClick={this.handleClick} to={`/listings/${listing.id}`} key={listing.id}><ListingIndexItem listing={listing}/></div>
                         )
                     })}
                 </ul>

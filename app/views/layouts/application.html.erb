@@ -12,6 +12,12 @@
         window.currentUser = <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>
       </script>
     <% end %>
+    <script type="text/javascript">
+      window.splashBuy = "<%= image_url('buy.jpg') %>"
+      window.splashRent = "<%= image_url('rent.jpg') %>"
+      window.splashSell = "<%= image_url('sell.jpg') %>"
+      window.favicon = "<%= image_url('favicon.png') %>"
+    </script>
   </head>
 
   <body>

@@ -4,8 +4,8 @@ const ListingIndexItem = (props) => {
 
     return (
         <li>
-            <div className='listing-item-picture'>
-                <img src={props.listing.photoUrls[0]} />
+            <div>
+                <img className='listing-item-picture' src={props.listing.photoUrls[0]} />
             </div>
             <div className='listing-index-item'>
                 <div className='listing-index-item-price'>

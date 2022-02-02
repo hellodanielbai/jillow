@@ -11,6 +11,7 @@ const Splash = (props) => {
 
             <div className="splash-options-wrapper">
                 <Link to="/listings">
+                    <img src={window.splashBuy} />
                     <h3>Buy a home</h3>
                     <p className="splash-options-card">
                         Find your place with an immersive photo experience and the most listings, including things you won't find anywhere else.
@@ -21,6 +22,7 @@ const Splash = (props) => {
                 </Link>
 
                 <Link to="/sell">
+                    <img src={window.splashSell} />
                     <h3>Sell a home</h3>
                     <p className="splash-options-card">
                         No matter what path you take to sell your home, we can help you navigate a successful sale.
@@ -31,6 +33,7 @@ const Splash = (props) => {
                 </Link>
 
                 <Link to="/listings">
+                    <img src={window.splashRent} />
                     <h3>Rent a home</h3>
                     <p className="splash-options-card">
                         We're creating a seamless online experience

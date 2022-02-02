@@ -5,10 +5,21 @@
 
 .map {
     background-color: yellowgreen;
+    font-size: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 
 .listings-parent {
-    margin: 0 20px;
+    display: flex;
+    grid-template-columns: auto;
+    width: 100%;
+    justify-content: center;
+}
+
+.listings-child {
+    max-width: 400px;
+    min-width: 400px;
 }
 
 .listing-index-item {
@@ -19,6 +30,10 @@
     margin-bottom: 10px;
     padding-left: 10px;
     cursor: pointer;
+}
+
+.listing-item-picture {
+    max-width: 100%;
 }
 
 .listing-index-item-price {
