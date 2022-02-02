@@ -17,26 +17,26 @@ const mapOptions = {
     zoom: 13
 };
 
-class BenchMap extends React.Component {
+class ListingMap extends React.Component {
     componentDidMount() {
         const map = this.refs.map;
         this.map = new google.maps.Map(map, mapOptions);
         this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
-        if (this.props.singleBench) {
-            this.props.fetchBench(this.props.benchId);
+        if (this.props.listing) {
+            this.props.fetchListing(this.props.listingId);
         } else {
             this.registerListeners();
-        this.MarkerManager.updateMarkers(this.props.benches);
+        this.MarkerManager.updateMarkers(this.props.listings);
         }
     }
 
     componentDidUpdate() {
-        if (this.props.singleBench) {
-            const targetBenchKey = Object.keys(this.props.benches)[0];
-            const targetBench = this.props.benches[targetBenchKey];
-            this.MarkerManager.updateMarkers([targetBench]); //grabs only that one bench
+        if (this.props.listing) {
+            const targetListingKey = Object.keys(this.props.listings)[0];
+            const targetListing = this.props.listings[targetListingKey];
+            this.MarkerManager.updateMarkers([targetListing]); //grabs only that one listing
         } else {
-            this.MarkerManager.updateMarkers(this.props.benches);
+            this.MarkerManager.updateMarkers(this.props.listings);
         }
     }
 
@@ -54,13 +54,13 @@ class BenchMap extends React.Component {
         });
     }
 
-    handleMarkerClick(bench) {
-        this.props.history.push(`benches/${bench.id}`);
+    handleMarkerClick(listing) {
+        this.props.history.push(`listings/${listing.id}`);
     }
     
     handleClick(coords) {
         this.props.history.push({
-        pathname: 'benches/new',
+        pathname: 'listings/new',
         search: `lat=${coords.lat}&lng=${coords.lng}`
         });
     }
@@ -74,4 +74,4 @@ class BenchMap extends React.Component {
     }
 }
 
-export default withRouter(BenchMap);
+export default withRouter(ListingMap);

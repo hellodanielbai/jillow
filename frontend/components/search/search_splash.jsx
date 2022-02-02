@@ -1,11 +1,9 @@
-import React from "react"
-import Listings from "../listings/listings"
+import React from "react";
 
-class Search extends React.Component {
+class SearchSplash extends React.Component {
     constructor(props) {
         super(props)
     }
-
     render() {
         return(
             <div>
@@ -14,4 +12,4 @@ class Search extends React.Component {
     }
 }
 
-export default Search;
+export default SearchSplash

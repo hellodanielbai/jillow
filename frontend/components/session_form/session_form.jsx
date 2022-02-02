@@ -23,8 +23,9 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user)
-            .then( () => {
+            .then(() => {
                 this.props.closeModal();
+                this.props.history.push('/listings')
             })
     };
 
@@ -34,11 +35,11 @@ class SessionForm extends React.Component {
             e.preventDefault()
             this.props.openModal(state)
             if (state === 'login') {
-                this.setState({signInTabClicked: true})
-                this.setState({signUpTabClicked: false})
+                e.currentTarget.parentElement.classList.add('tab-clicked')
+                // e.currentTarget.parentElement.classList.remove('tab-clicked')
             } else if (state === 'signup') {
-                this.setState({signInTabClicked: false})
-                this.setState({signUpTabClicked: true})
+                e.currentTarget.parentElement.classList.add('tab-clicked')
+                e.currentTarget.parentElement.classList.add('tab-clicked')
             }
         };
     };
@@ -82,10 +83,10 @@ class SessionForm extends React.Component {
                         <div className="header-tab-container">
                             <h1 className="jillow-title">Welcome to Jillow</h1>
                             <div className="signinnout">
-                                <div className={`${this.state.signInTabClicked ? "tab-clicked" : ""}`}>
+                                <div className='tab-clicked'>
                                     <button id="sign-in" onClick={this.handleClick('login')}>Sign In</button>
                                 </div>
-                                <div className={`${this.state.signUpTabClicked ? "tab-clicked" : ""}`}>
+                                <div>
                                     <button id="sign-up" onClick={this.handleClick('signup')}>New Account</button>
                                 </div>
                             </div>

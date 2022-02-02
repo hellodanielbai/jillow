@@ -9,12 +9,14 @@ class ListingShow extends React.Component {
         this.props.fetchListing(this.props.listingId);
     }
 
+
     render() {
         // if (!this.props.listing) {
         //     return null;
         // }
         console.log(this.props)
         return (
+
             <div className="selectedListing">
                 <div className="selectedListingPhoto">
                     {this.props.selectedListing.photoUrls.map((url, index) => {
@@ -37,6 +39,11 @@ class ListingShow extends React.Component {
                     {this.props.selectedListing.state} 
                     {this.props.selectedListing.zipcode}
                 </div>
+
+                <div>
+                    <div className="X" onClick={this.closeModal}>X</div>
+                </div>
+
             </div>
         )
     }

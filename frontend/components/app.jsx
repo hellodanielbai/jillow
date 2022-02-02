@@ -13,7 +13,8 @@ import Splash from "./splash/splash";
 
 const App = () => (
     <div>
-        <Modal />
+        <Route path="/" component={ Modal } />
+        
         <NavbarContainer />
         <Switch>
             <Route path="/listings" component={ListingsContainer} />

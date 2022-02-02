@@ -4,17 +4,17 @@ import { connect } from 'react-redux';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 
-function Modal({modal, closeModal}) {
+function Modal({modal, closeModal, history}) {
     if (!modal) {
         return null;
     }
     let component;
     switch (modal) {
         case 'login':
-            component = <LoginFormContainer />;
+            component = <LoginFormContainer history={history} />;
             break;
         case 'signup':
-            component = <SignupFormContainer />;
+            component = <SignupFormContainer history={history} />;
             break;
         default:
             return null;

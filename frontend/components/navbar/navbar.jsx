@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = ({ currentUser, login, logout }) => {
-
     const sessionClosed = () => (
         <div className="navbar-content">
             <hgroup className="navbar-left">

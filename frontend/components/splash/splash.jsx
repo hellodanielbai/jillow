@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Footer from "../footer/footer"
 
 const Splash = (props) => {
     return (
@@ -44,6 +45,7 @@ const Splash = (props) => {
                     </div>
                 </Link>
             </div>
+            <Footer />
         </div>
         
     )
