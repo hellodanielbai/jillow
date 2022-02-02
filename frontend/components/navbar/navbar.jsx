@@ -27,9 +27,9 @@ const Navbar = ({ currentUser, login, logout }) => {
         <div className="navbar-content">
             <hgroup className="navbar-left">
                 <div className="navbar-items-parent">
-                    <Link className="navbar-item" to="#">Buy</Link>
-                    <Link className="navbar-item" to="#">Rent</Link>
-                    <Link className="navbar-item" to="#">Sell</Link>
+                    <Link className="navbar-item" to="/listings">Buy</Link>
+                    <Link className="navbar-item" to="/rent">Rent</Link>
+                    <Link className="navbar-item" to="/sell">Sell</Link>
                 </div>
                 <div>
                     <div className="navbar-title">Jillow</div>
@@ -37,11 +37,11 @@ const Navbar = ({ currentUser, login, logout }) => {
                 <div className="navbar-items-parent">
                     <a className="navbar-item" href="https://github.com/hellodanielbai">GitHub</a>
                     <a className="navbar-item" href="https://github.com/hellodanielbai">LinkedIn</a>
+                    <a className="navbar-item" onClick={() => logout()}>Sign Out</a>
                     {/* <div className="dropdown">
                         <div>
                             <button className="navbar-item" onClick={() => handleOnClick()}>DropDown</button>
                         </div> */}
-                        <a className="navbar-item" onClick={() => logout()}>Sign Out</a>
                     {/* </div> */}
                 </div>
             </hgroup>

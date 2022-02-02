@@ -1,10 +1,11 @@
 import React from 'react';
 
 const ListingIndexItem = (props) => {
+
     return (
-        <li className='listing-item-picture'>
-            <div>
-                {props.listing.picture}
+        <li>
+            <div className='listing-item-picture'>
+                <img src={props.listing.photoUrls[0]} />
             </div>
             <div className='listing-index-item'>
                 <div className='listing-index-item-price'>

@@ -44,8 +44,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 400px;
-    height: 500px;
+    width: 800px;
+    height: 800px;
     display: flex;
     justify-content: center;
     background-color: white;
@@ -56,4 +56,19 @@
     font-size: 16px;
     padding: 40px 0 40px 0;
     z-index: 10000;
+    box-sizing: border-box;
+}
+
+.selectedListingPrice {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.selectedListingInfo {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.selectedListingAddress {
+    font-size: 24px;
 }

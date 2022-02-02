@@ -5,17 +5,17 @@ export const fetchAllListings = () => (
     })
 );
 
-export const fetchSavedListings = (userId) => (
-    $.ajax({
-        method: 'GET',
-        url: '/api/listings',
-    })
-);
-
 export const fetchListing = (listingId) => (
     $.ajax({
         method: 'GET',
         url: `api/listings/${listingId}`
+    })
+);
+
+export const fetchSavedListings = (userId) => (
+    $.ajax({
+        method: 'GET',
+        url: '/api/listings',
     })
 );
 

@@ -35,14 +35,14 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
-}
-
-.navbar-item:hover {
-    color: #006aff;
-}
-
-.navbar-item:focus {
-    border: #006aff;
+    &:hover {
+        color: #006aff;
+        border: #006aff;
+    }
+    &:focus {
+        border: #006aff;
+    }
+    
 }
 
 .navbar-title {
