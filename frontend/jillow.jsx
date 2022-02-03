@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const root = document.getElementById('root')
-    window.logout = logout
     window.store = store
     window.getState = store.getState
     ReactDOM.render(<Root store={store} />, root)

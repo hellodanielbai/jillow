@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { withRouter } from 'react-router-dom';
-
 import MarkerManager from '../../util/marker_manager';
 
 const getCoordsObj = latLng => ({
@@ -11,9 +10,9 @@ const getCoordsObj = latLng => ({
 
 const mapOptions = {
     center: {
-    lat: 37.773972,
-    lng: -122.431297
-    }, // San Francisco coords
+    lat: 34.0522,
+    lng: -118.2437
+    }, // LA coords
     zoom: 13
 };
 

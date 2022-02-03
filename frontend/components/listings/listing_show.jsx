@@ -41,6 +41,9 @@ class ListingShow extends React.Component {
                         {this.props.selectedListing.state} &nbsp;
                         {this.props.selectedListing.zipcode} &nbsp;
                     </div>
+                    <div className="selectedListingDescription">
+                        {this.props.selectedListing.description}
+                    </div>
                 </div>
                 <div>
                     <div className="selectedX" onClick={this.props.closeModal}>X</div>

@@ -27,7 +27,7 @@ const Navbar = ({ currentUser, login, showDropDown }) => {
             <hgroup className="navbar-left">
                 <div className="navbar-items-parent">
                     <Link className="navbar-item" to="/listings">Buy</Link>
-                    <Link className="navbar-item" to="/rent">Rent</Link>
+                    <Link className="navbar-item" to="/listings">Rent</Link>
                     <Link className="navbar-item" to="/sell">Sell</Link>
                 </div>
                 <div>
@@ -36,7 +36,7 @@ const Navbar = ({ currentUser, login, showDropDown }) => {
                 <div className="navbar-items-parent">
                     <a className="navbar-item" href="https://github.com/hellodanielbai">GitHub</a>
                     <a className="navbar-item" href="https://github.com/hellodanielbai">LinkedIn</a>
-                    <button onClick={() => showDropDown()}>USERICON</button>
+                    <button onClick={() => showDropDown()}>DOG IMAGE</button>
                 </div>
             </hgroup>
         </div>
