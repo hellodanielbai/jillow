@@ -41,7 +41,7 @@ class ListingShow extends React.Component {
                 </div>
 
                 <div>
-                    <div className="X" onClick={this.closeModal}>X</div>
+                    <div className="X" onClick={this.props.closeModal}>X</div>
                 </div>
 
             </div>

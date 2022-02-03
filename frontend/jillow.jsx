@@ -6,7 +6,6 @@ import { logout } from './actions/session_actions'
 //Components
 import Root from './components/root';
 import configureStore from './store/store'
-
 import logoutCurrentUser from './actions/session_actions' 
 
 document.addEventListener('DOMContentLoaded', () => {

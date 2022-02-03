@@ -14,11 +14,10 @@ import Splash from "./splash/splash";
 const App = () => (
     <div>
         <Route path="/" component={ Modal } />
-        
         <NavbarContainer />
         <Switch>
-            <Route path="/listings" component={ListingsContainer} />
-            <Route path="/buy" component={Search} />
+            <Route exact path="/listings" component={ListingsContainer} />
+            <Route exact path="/buy" component={Search} />
             <Route exact path="/" component={Splash} />
         </Switch>
     </div>

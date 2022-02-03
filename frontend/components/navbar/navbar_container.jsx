@@ -12,7 +12,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => ({
     login: () => dispatch(openModal('login')),
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    showDropDown: () => dispatch(openModal('openDropDown'))
 });
 
 export default connect(mSTP, mDTP)(Navbar);

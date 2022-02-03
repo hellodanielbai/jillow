@@ -1,4 +1,4 @@
-import * as SaveAPIUtil from "../util/save_utils";
+import * as SaveAPIUtil from "../util/save_util";
 import { receiveErrors } from "./session_actions";
 
 export const RECEIVE_SAVE = "RECEIVE_SAVE";
