@@ -16,34 +16,35 @@ class ListingShow extends React.Component {
         // }
         console.log(this.props)
         return (
-
             <div className="selectedListing">
-                <div className="selectedListingPhoto">
+                <div className="selectedListingPhotos">
                     {this.props.selectedListing.photoUrls.map((url, index) => {
                         return (
                             <img src={url} key={index} />
                         )
                     })}
                 </div>
-                <div className="selectedListingPrice">
-                    ${this.props.selectedListing.price}
-                </div>
-                <div className="selectedListingInfo">
-                    {this.props.selectedListing.bd}bd
-                    {this.props.selectedListing.ba}ba
-                    {this.props.selectedListing.sqft}sqft
-                </div>
-                <div className="selectedListingAddress">
-                    {this.props.selectedListing.address}, 
-                    {this.props.selectedListing.city}, 
-                    {this.props.selectedListing.state} 
-                    {this.props.selectedListing.zipcode}
-                </div>
 
+                <div className="selectedListingInfo"> 
+                    <hr className="selectedLine"></hr>
+                    <div className="selectedListingPrice">
+                        ${this.props.selectedListing.price}
+                    </div>
+                    <div className="selectedListingBdBa">
+                        {this.props.selectedListing.bd} bd &nbsp;
+                        {this.props.selectedListing.ba} ba &nbsp;
+                        {this.props.selectedListing.sqft} sqft &nbsp;
+                    </div>
+                    <div className="selectedListingAddress">
+                        {this.props.selectedListing.address}, &nbsp;
+                        {this.props.selectedListing.city}, &nbsp;
+                        {this.props.selectedListing.state} &nbsp;
+                        {this.props.selectedListing.zipcode} &nbsp;
+                    </div>
+                </div>
                 <div>
-                    <div className="X" onClick={this.props.closeModal}>X</div>
+                    <div className="selectedX" onClick={this.props.closeModal}>X</div>
                 </div>
-
             </div>
         )
     }

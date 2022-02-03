@@ -35,24 +35,27 @@ class Listings extends React.Component {
         if (!this.props.listings) return null
         return (
             <div className='listings-container'>
-                { this.state.selectedListing && (
-                    < ListingShowContainer closeModal={this.closeModal} listingId={this.state.selectedListing} /> 
-                )}
-                <div className='map'>
-                    SUPER SICK MAP API
-                </div>
-                <ul className='listings-parent'>
-                    <div className='listings-title'>Los Angeles CA Real Estate & Homes For Sale</div>
-                    {this.props.listings.map(listing => {
-                        return (
-                            <div>
-                                <div className="listings-child" id={listing.id} onClick={this.handleClick} to={`/listings/${listing.id}`} key={listing.id}>
-                                    <ListingIndexItem listing={listing}/>
+                    { this.state.selectedListing && (
+                        < ListingShowContainer closeModal={this.closeModal} listingId={this.state.selectedListing} /> 
+                    )}
+                    <div className='map'>
+                        SUPER SICK MAP API
+                    </div>
+                    <div>
+
+                <div className='listings-title'>Los Angeles CA Real Estate & Homes For Sale</div>
+                    <ul className='listings-parent'>
+                        {this.props.listings.map(listing => {
+                            return (
+                                <div>
+                                    <div id={listing.id} onClick={this.handleClick} to={`/listings/${listing.id}`} key={listing.id}>
+                                        <ListingIndexItem listing={listing}/>
+                                    </div>
                                 </div>
-                            </div>
-                        )
-                    })}
-                </ul>
+                            )
+                        })}
+                    </ul>
+                </div>
             </div>
         )
     }

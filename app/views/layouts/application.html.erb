@@ -4,7 +4,6 @@
     <title>Jillow</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <% if logged_in? %>
@@ -16,9 +15,10 @@
       window.splashBuy = "<%= image_url('buy.jpg') %>"
       window.splashRent = "<%= image_url('rent.jpg') %>"
       window.splashSell = "<%= image_url('sell.jpg') %>"
-      window.favicon = "<%= image_url('favicon.png') %>"
       window.footerImage = "<%= image_url('footer.png') %>"
     </script>
+
+    <%= favicon_link_tag asset_path('favicon.png') %>
   </head>
 
   <body>

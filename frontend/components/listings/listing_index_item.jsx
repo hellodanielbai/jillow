@@ -3,7 +3,7 @@ import React from 'react';
 const ListingIndexItem = (props) => {
 
     return (
-        <li>
+        <li className="listing-child">
             <div>
                 <img className='listing-item-picture' src={props.listing.photoUrls[0]} />
             </div>
@@ -12,15 +12,15 @@ const ListingIndexItem = (props) => {
                     ${props.listing.price}
                 </div>
                 <div className='listing-index-item-info'>
-                    {props.listing.bd} bds 
-                    {props.listing.ba} ba 
-                    {props.listing.sqft} sqft
+                    {props.listing.bd} bds &nbsp;
+                    {props.listing.ba} ba &nbsp;
+                    {props.listing.sqft} sqft &nbsp;
                 </div>
                 <div className='listing-index-item-address'> 
-                    {props.listing.address},
-                    {props.listing.city}, 
-                    {props.listing.state}
-                    {props.listing.zipcode}
+                    {props.listing.address}, &nbsp;
+                    {props.listing.city}, &nbsp;
+                    {props.listing.state} &nbsp;
+                    {props.listing.zipcode} &nbsp;
                 </div>
             </div>
         </li>

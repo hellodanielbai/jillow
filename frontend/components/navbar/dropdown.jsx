@@ -8,11 +8,12 @@ class DropDown extends React.Component {
 
     render() {
         return (
-            <div>
-                <Link to="/listings/saves">Saved Houses</Link>
-                <Link to="/listings/saves">Saved Search</Link>
-                <Link to="/listings/saves">Your Home</Link>
-                <a onClick={() => this.props.logout()}>Sign out</a>
+            <div className='dropdown-container'>
+                <Link className="dropdown-item" to="/listings/saves">Saved Houses</Link>
+                <Link className="dropdown-item" to="/listings/saves">Saved Search</Link>
+                <Link className="dropdown-item" to="/listings/saves">Your Home</Link>
+                <hr className="dropdown-line"></hr>
+                <Link className="dropdown-item" to="/" onClick={() => this.props.logout()}>Sign Out</Link>
             </div>
         )
     }

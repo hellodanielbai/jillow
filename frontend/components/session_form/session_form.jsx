@@ -7,8 +7,6 @@ class SessionForm extends React.Component {
         this.state = {
             email: '',
             password: '',
-            signInTabClicked: true,
-            signUpTabClicked: false,
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     };
@@ -34,13 +32,6 @@ class SessionForm extends React.Component {
             console.log(state)
             e.preventDefault()
             this.props.openModal(state)
-            if (state === 'login') {
-                e.currentTarget.parentElement.classList.add('tab-clicked')
-                // e.currentTarget.parentElement.classList.remove('tab-clicked')
-            } else if (state === 'signup') {
-                e.currentTarget.parentElement.classList.add('tab-clicked')
-                e.currentTarget.parentElement.classList.add('tab-clicked')
-            }
         };
     };
 
@@ -83,10 +74,10 @@ class SessionForm extends React.Component {
                         <div className="header-tab-container">
                             <h1 className="jillow-title">Welcome to Jillow</h1>
                             <div className="signinnout">
-                                <div className='tab-clicked'>
+                                <div className={ this.props.formType==='login' ? 'tab-clicked' : '' }>
                                     <button id="sign-in" onClick={this.handleClick('login')}>Sign In</button>
                                 </div>
-                                <div>
+                                <div className={ this.props.formType==='signup' ? 'tab-clicked' : '' }>
                                     <button id="sign-up" onClick={this.handleClick('signup')}>New Account</button>
                                 </div>
                             </div>
@@ -119,6 +110,7 @@ class SessionForm extends React.Component {
                             <input className="modal-submit" type="submit" value={formInput['title']} /> 
                         </div>    
                         <hr className="bottom-divider"></hr>
+
                         <div>
                             <label className="connect-tag">Or connect with:</label>
                         </div>
