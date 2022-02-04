@@ -14,7 +14,8 @@ class ListingCreate extends React.Component {
             ba: "",
             description: "",
             lat: 1,
-            lng: 1
+            lng: 1,
+            // photoFile: null
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -28,6 +29,18 @@ class ListingCreate extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.addListing(this.parseState())
+        // const formData = new FormData();
+        // formData.append('post[photo]', this.state.photoFile)
+        // $.ajax({
+        //     url: '/api/listings',
+        //     method: 'POST',
+        //     contentType: false,
+        //     processData: false
+        // })
+    };
+
+    handleFile(e) {
+        this.setState({photoFile: e.currentTarget.files[0]})
     };
 
     renderErrors() {
@@ -75,6 +88,9 @@ class ListingCreate extends React.Component {
                 <div>Description
                     <input id="description" type="text" value={this.state.description} onChange={this.update("description")} />
                 </div>
+                {/* <div>Photos
+                    <input type="file" onChange={this.handleFile.bind(this)} />
+                </div> */}
                 <div>
                     <input type="submit" />
                 </div>

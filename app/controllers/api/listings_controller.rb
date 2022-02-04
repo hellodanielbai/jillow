@@ -11,7 +11,11 @@ class Api::ListingsController < ApplicationController
 
     def show
         @listing = Listing.with_attached_photos.find(params[:id])
-        render "api/listings/show"
+        if @listing 
+            render "api/listings/show"
+        else
+            render json: ["Listing can't be found"], status: 422
+        end
     end
 
     def create
@@ -23,14 +27,24 @@ class Api::ListingsController < ApplicationController
         end
     end
 
-    # def update
+    def update
+        @listing = Listing.find_by(id: params[:id])
+        if @listing && (current_user.id == @listing.userId)
+            @listing.update(listing_params)
+            render :show
+        else
+            render json: ["You can't update another user's listing"], status: 422
+        end
+    end
 
-    # end
-
-    # def applyFilters
-
-    # end
-
+    def destroy
+        @listing = Listing.find_by(id: params[:id])
+        if @listing && (current_user.id == @listing.userId)
+            @listing.destroy
+        else
+            render json: ["You can't delete another user's listing"], status: 422
+        end
+    end
 
     private
     def listing_params
