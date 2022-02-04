@@ -70,3 +70,10 @@
     color: #006AFF;
     transition: transform 250ms;
 }
+
+.footer-image {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 100px;
+}

@@ -86,7 +86,6 @@
     margin-bottom: 40px;
 }
 
-
 .selectedListing {
     position: absolute;
     top: 50%;
@@ -106,14 +105,22 @@
     box-sizing: border-box;
 }
 
-// .selectedListingPhotos {
-//     width: %;
-// }
+.selectedListingPhotos {
+    display: grid;
+}
+
+.selectedListingPhoto {
+    display: flex;
+    justify-content: column;
+    max-height: 50%;
+    max-width: 100%;
+}
 
 .selectedListingInfo {
     font-family: "Open Sans", "Adjusted Arial", Tahoma, Geneva, sans-serif;
     font-size: 16px;
     line-height: 24px;
+    max-width: 30%;
 }
 
 .selectedListingPrice {

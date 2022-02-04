@@ -20,7 +20,7 @@ class ListingShow extends React.Component {
                 <div className="selectedListingPhotos">
                     {this.props.selectedListing.photoUrls.map((url, index) => {
                         return (
-                            <img src={url} key={index} />
+                            <img className="selectedListingPhoto" src={url} key={index} />
                         )
                     })}
                 </div>
