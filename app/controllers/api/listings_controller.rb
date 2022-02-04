@@ -15,12 +15,17 @@ class Api::ListingsController < ApplicationController
     end
 
     def create
-        
+        @listing = Listing.new(listing_params)
+        if @listing.save!
+            render :show
+        else
+            render json: @listing.errors.full_messages, status: 422
+        end
     end
 
-    def update
+    # def update
 
-    end
+    # end
 
     # def applyFilters
 

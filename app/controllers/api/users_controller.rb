@@ -14,7 +14,6 @@ class Api::UsersController < ApplicationController
 
     def show
         @user = User.find(params[:id])
-        debugger
         if @user
             render :show
         else

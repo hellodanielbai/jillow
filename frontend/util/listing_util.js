@@ -19,10 +19,10 @@ export const fetchSavedListings = (userId) => (
     })
 );
 
-export const createListing = (data) => (
+export const createListing = (listing) => (
     $.ajax({
         method: 'POST',
         url: 'api/listings',
-        data
+        data: { listing }
     })
 );
