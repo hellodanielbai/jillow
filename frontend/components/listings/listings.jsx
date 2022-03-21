@@ -2,6 +2,7 @@ import React, { useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import ListingIndexItem from './listing_index_item';
 import ListingShowContainer from './listing_show_container';
+import ListingMap from '../map/map.jsx'
 
 
 class Listings extends React.Component {
@@ -16,7 +17,8 @@ class Listings extends React.Component {
 
     componentDidMount() {
         this.props.fetchAllListings();
-}
+    }
+
 
     handleClick(e) {
         e.preventDefault();
@@ -39,17 +41,17 @@ class Listings extends React.Component {
                         < ListingShowContainer closeModal={this.closeModal} listingId={this.state.selectedListing} /> 
                     )}
                     <div className='map'>
-                        SUPER SICK MAP API
+                        <ListingMap />
                     </div>
                     <div>
 
                 <div className='listings-title'>Los Angeles CA Real Estate & Homes For Sale</div>
                     <ul className='listings-parent'>
-                        {this.props.listings.map(listing => {
+                        {this.props.listings.map((listing, index) => {
                             return (
-                                <div>
+                                <div key={index}>
                                     <div id={listing.id} onClick={this.handleClick} to={`/listings/${listing.id}`} key={listing.id}>
-                                        <ListingIndexItem listing={listing}/>
+                                        <ListingIndexItem listing={listing} user={this.props.user} createSave={this.props.createSave} />
                                     </div>
                                 </div>
                             )

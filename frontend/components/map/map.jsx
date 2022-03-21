@@ -1,76 +1,63 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { withRouter } from 'react-router-dom';
-import MarkerManager from '../../util/marker_manager';
+import React, { Component } from 'react';
+import mapboxgl from 'mapbox-gl';
+import { Marker } from 'mapbox-gl';
+// mapboxgl.accessToken = process.env.REACT_APP_MAPBOX
+mapboxgl.accessToken = "pk.eyJ1IjoiaGVsbG9kYW5pZWxiYWkiLCJhIjoiY2wwcmEyOGR5MDFnazNkbzJkdGxmeDdnMyJ9.gV3BunL1RA4JPzbl9Zn2UQ"
 
-const getCoordsObj = latLng => ({
-    lat: latLng.lat(),
-    lng: latLng.lng()
-});
+const mapData = [{
+    'location': 'address',
+    'city': 'Los Angeles', 
+    'state': 'CA',
+    'coordinates': [-118.3841718, 34.0524269]
+}]
 
-const mapOptions = {
-    center: {
-    lat: 34.0522,
-    lng: -118.2437
-    }, // LA coords
-    zoom: 13
-};
 
 class ListingMap extends React.Component {
-    componentDidMount() {
-        const map = this.refs.map;
-        this.map = new google.maps.Map(map, mapOptions);
-        this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
-        if (this.props.listing) {
-            this.props.fetchListing(this.props.listingId);
-        } else {
-            this.registerListeners();
-        this.MarkerManager.updateMarkers(this.props.listings);
+    constructor(props) {
+        super(props)
+        this.state = {
+            lng: -118.3322843,
+            lat: 34.0199463,
+            zoom: 11.0
         }
     }
 
-    componentDidUpdate() {
-        if (this.props.listing) {
-            const targetListingKey = Object.keys(this.props.listings)[0];
-            const targetListing = this.props.listings[targetListingKey];
-            this.MarkerManager.updateMarkers([targetListing]); //grabs only that one listing
-        } else {
-            this.MarkerManager.updateMarkers(this.props.listings);
-        }
-    }
+    componentDidMount(){
+		const map = new mapboxgl.Map({
+			container: this.mapContainer,
+			style: 'mapbox://styles/mapbox/streets-v10', 
+			center: [this.state.lng, this.state.lat],
+			zoom: this.state.zoom
+        })
 
-    registerListeners() {
-        google.maps.event.addListener(this.map, 'idle', () => {
-            const { north, south, east, west } = this.map.getBounds().toJSON();
-            const bounds = {
-            northEast: { lat:north, lng: east },
-            southWest: { lat: south, lng: west } };
-            this.props.updateFilter('bounds', bounds);
+        map.on('move', () => {
+            const { lng, lat } = map.getCenter();
+            this.setState({
+                lng: lng.toFixed(4),
+                lat: lat.toFixed(4),
+                zoom: map.getZoom().toFixed(2)
+            });
         });
-        google.maps.event.addListener(this.map, 'click', (event) => {
-            const coords = getCoordsObj(event.latLng);
-            this.handleClick(coords);
-        });
-    }
 
-    handleMarkerClick(listing) {
-        this.props.history.push(`listings/${listing.id}`);
-    }
-    
-    handleClick(coords) {
-        this.props.history.push({
-        pathname: 'listings/new',
-        search: `lat=${coords.lat}&lng=${coords.lng}`
-        });
+
+        mapData.forEach((location) => {
+			var marker = new Marker()
+                        .setLngLat(location.coordinates)
+                        .setPopup(new mapboxgl.Popup({ offset: 30 })
+                            .setHTML( '<h4 className="popup-heading">' + location.city + '</h4>' + location.location ))
+                        .addTo(map);
+		})
+
+        return () => map.remove();
     }
 
     render() {
         return (
-            <div className="map" ref="map">
-                Map
+            <div className='map-container'>
+                <div ref={el => this.mapContainer = el} className='map'/>
             </div>
-        );
+        )
     }
 }
 
-export default withRouter(ListingMap);
+export default ListingMap

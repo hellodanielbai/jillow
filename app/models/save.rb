@@ -1,7 +1,7 @@
 class Save < ApplicationRecord
 
-    validates: :user_id, :listing_id, presence: true
-    validates: :user_id, uniquness: { scope: :listing_id}
+    validates :user_id, :listing_id, presence: true
+    validates :user_id, uniqueness: { scope: :listing_id}
 
     belongs_to :saver,
         foreign_key: :user_id,

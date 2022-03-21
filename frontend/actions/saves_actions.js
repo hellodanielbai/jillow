@@ -35,12 +35,14 @@ export const fetchAllSaves = () => (dispatch) => (
     )
 )
 
-export const createSave = (save) => (dispatch) => (
-    SaveAPIUtil.createSave(save).then(
-        (save) => dispatch(receiveSave(save)),
-        (errors) => dispatch(receiveSaveErrors(errors.responseJSON))
+export const createSave = (save) => (dispatch) => {
+    return (
+        SaveAPIUtil.createSave(save).then(
+            (save) => dispatch(receiveSave(save)),
+            (errors) => dispatch(receiveSaveErrors(errors.responseJSON))
+            )
     )
-)
+}
 
 export const deleteSave = (saveId) => (dispatch) => (
     SaveAPIUtil.deleteSave(saveId).then(
