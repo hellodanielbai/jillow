@@ -9,8 +9,11 @@ import { createSave, deleteSave, fetchAllSaves } from '../../actions/saves_actio
 const mSTP = (state, ownProps) => {
     return {
         listings: Object.values(state.entities.listings),
-        user: state.session.id
+        user: state.session.id,
+        currentUser: state.entities.users[state.session.id],
+        // saves: Object.values(state.entities.saves)
     };
+
 };
 
 const mDTP = dispatch => ({
@@ -18,7 +21,7 @@ const mDTP = dispatch => ({
     fetchAllSaves: () => dispatch(fetchAllSaves()),
     openModal: (type) => dispatch(openModal(type)),
     createSave: (user, listing) => dispatch(createSave(user, listing)),
-    deleteSave: (user, listing) => dispatch(createSave(user, listing))
+    deleteSave: (user, listing) => dispatch(deleteSave(user, listing))
 });
 
 export default connect(mSTP, mDTP)(Listings);

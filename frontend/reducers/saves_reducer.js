@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_SAVES, RECEIVE_SAVE, REMOVE_SAVE } from "../actions/saves_actions";
+import { RECEIVE_ALL_SAVES, RECEIVE_SAVE, DELETE_SAVE } from "../actions/saves_actions";
 
 const savesReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
@@ -10,7 +10,7 @@ const savesReducer = (oldState = {}, action) => {
         case RECEIVE_SAVE:
             nextState[action.save.id] = action.save;
             return nextState;
-        case REMOVE_SAVE:
+        case DELETE_SAVE:
             delete nextState[action.saveId];
             return nextState;
         default:

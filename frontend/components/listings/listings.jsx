@@ -2,7 +2,8 @@ import React, { useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import ListingIndexItem from './listing_index_item';
 import ListingShowContainer from './listing_show_container';
-import ListingMap from '../map/map.jsx'
+import ListingMap from '../map/map.jsx';
+import ListingLike from './listing_like';
 
 
 class Listings extends React.Component {
@@ -18,7 +19,6 @@ class Listings extends React.Component {
     componentDidMount() {
         this.props.fetchAllListings();
     }
-
 
     handleClick(e) {
         e.preventDefault();
@@ -49,7 +49,8 @@ class Listings extends React.Component {
                     <ul className='listings-parent'>
                         {this.props.listings.map((listing, index) => {
                             return (
-                                <div key={index}>
+                                <div className="listing-child" key={index}>
+                                    <ListingLike listing={listing} user={this.props.user} createSave={this.props.createSave} />
                                     <div id={listing.id} onClick={this.handleClick} to={`/listings/${listing.id}`} key={listing.id}>
                                         <ListingIndexItem listing={listing} user={this.props.user} createSave={this.props.createSave} />
                                     </div>

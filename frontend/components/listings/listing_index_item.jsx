@@ -9,7 +9,7 @@ class ListingIndexItem extends React.Component {
 
     render() {
         return (
-            <div className="listing-child">
+            <div>
                 <div>
                     <img className='listing-item-picture' src={this.props.listing.photoUrls[0]} />
                 </div>
@@ -27,7 +27,7 @@ class ListingIndexItem extends React.Component {
                         {this.props.listing.city}, &nbsp;
                         {this.props.listing.state} &nbsp;
                         {this.props.listing.zipcode} &nbsp;
-                        <ListingLike listing={this.props.listing} user={this.props.user} createSave={this.props.createSave} />
+                        {/* <ListingLike listing={this.props.listing} user={this.props.user} createSave={this.props.createSave} /> */}
                     </div>
                 </div>
             </div>

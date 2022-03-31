@@ -14,7 +14,6 @@ class ListingShow extends React.Component {
         // if (!this.props.listing) {
         //     return null;
         // }
-        console.log(this.props)
         return (
             <div className="selectedListing">
                 <div className="selectedListingPhotos">

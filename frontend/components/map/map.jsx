@@ -11,7 +11,6 @@ const mapData = [{
     'coordinates': [-118.3841718, 34.0524269]
 }]
 
-
 class ListingMap extends React.Component {
     constructor(props) {
         super(props)

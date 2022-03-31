@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
 
     handleClick(state) {
         return (e) => {
-            console.log(state)
+
             e.preventDefault()
             this.props.openModal(state)
         };

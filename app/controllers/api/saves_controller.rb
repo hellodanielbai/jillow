@@ -1,10 +1,12 @@
 class Api::SavesController < ApplicationController
     def index
-
+        @saves = Save.all
+        render :index
     end
 
     def create
         @save = Save.new(save_params)
+        @save.user_id = current_user.id
         if @save.save
             render :show
         else
@@ -12,8 +14,14 @@ class Api::SavesController < ApplicationController
         end
     end
 
-    def destroy
+    def show
+        @save = Save.find(params[:id])
+        render :show
+    end
 
+    def destroy
+        @save = Save.find(params[:id])
+        render :show
     end
 
     private
