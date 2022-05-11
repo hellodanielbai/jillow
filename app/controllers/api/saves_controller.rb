@@ -21,6 +21,7 @@ class Api::SavesController < ApplicationController
 
     def destroy
         @save = Save.find(params[:id])
+        delete @save
         render :show
     end
 

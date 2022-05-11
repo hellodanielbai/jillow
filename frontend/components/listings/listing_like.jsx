@@ -16,27 +16,44 @@ class ListingLike extends React.Component {
         this.update = this.update.bind(this)
     }
 
-    update(e) {
-        e.preventDefault()
-        this.props.createSave(this.state)
+    componentDidMount() {
+        this.props.fetchAllSaves()
+    }
+
+    update(like) {
+        // e.preventDefault()
+        if (like.length === 0) {
+            this.props.createSave(this.state)
+        } else {
+            this.props.deleteSave(this.state)
+        }
     }
 
     render() {
-        let likes = this.props.saves.filter(save => save.user_id === this.props.currentUser.id);
+        let like = this.props.saves.filter(save => this.props.listing.id === save.listingId)
+        console.log("like", like)
         let likeImage;
-        likes.map(like => {
-            if(this.props.listing.includes(like.listing_id)){
-                likeImage = (<div> <AiOutlineHeart className="likedImage"/> </div>)
-            } else {
-                likeImage = (<div> <AiOutlineHeart className="unlikedImage"/> </div>)
-            }
-        })
+        // let likeImage = (<div> <AiOutlineHeart className="likedImage"/> </div>)
+        // likes(like => {
+        //     if (this.props.listing.includes(like.listingId)){
+        //         likeImage = (<div> <AiOutlineHeart className="likedImage"/> </div>)
+        //     } else {
+        //         likeImage = (<div> <AiOutlineHeart className="unlikedImage"/> </div>)
+        //     }
+        // })
+
+        if (like.length > 0) {
+            likeImage = (<div> <AiOutlineHeart className="likedImage"/> </div>)
+        } else {
+            likeImage = (<div> <AiOutlineHeart className="unlikedImage"/> </div>)
+        }
 
         return (
             <div className="listing-like">
                 <label>
-                    <div onClick={this.update} >
-                        <AiOutlineHeart className="unlikedImage"/>
+                    <div onClick={(like) => this.update(like)} >
+                        { likeImage }
+                        {/* <AiOutlineHeart className="likedImage"/> */}
                     </div>
                 </label>
             </div>
@@ -45,11 +62,14 @@ class ListingLike extends React.Component {
 }
 
 const mSTP = (state, ownProps) => {
+    let saves;
+    saves = Object.values(state.entities.saves).filter(save => { return state.session.id === save.userId })
     return {
         listings: Object.values(state.entities.listings),
         user: state.session.id,
         currentUser: state.entities.users[state.session.id],
-        saves: Object.values(state.entities.saves)
+        // saves: Object.values(state.entities.saves)
+        saves: saves
     };
 };
 

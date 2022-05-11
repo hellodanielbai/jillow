@@ -22,12 +22,14 @@ class Listings extends React.Component {
 
     handleClick(e) {
         e.preventDefault();
+        document.body.classList.add('modalOpen');
         this.setState({
             selectedListing: e.currentTarget.id
         })
     }
 
     closeModal() {
+        document.body.classList.remove('modalOpen');
         this.setState({
             selectedListing: null
         })
@@ -36,7 +38,7 @@ class Listings extends React.Component {
     render() {
         if (!this.props.listings) return null
         return (
-            <div className='listings-container'>
+            <div className={`listings-container`}>
                     { this.state.selectedListing && (
                         < ListingShowContainer closeModal={this.closeModal} listingId={this.state.selectedListing} /> 
                     )}

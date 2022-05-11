@@ -16,6 +16,7 @@ class ListingShow extends React.Component {
         // }
         return (
             <div className="selectedListing">
+                
                 <div className="selectedListingPhotos">
                     {this.props.selectedListing.photoUrls.map((url, index) => {
                         return (
@@ -25,6 +26,12 @@ class ListingShow extends React.Component {
                 </div>
 
                 <div className="selectedListingInfo"> 
+                <div>
+                    
+                    <div className="selectedX" onClick={this.props.closeModal}>
+                        <svg width="24px" height="24px" focusable="false"><path d="M11.778 11.778L4 4l7.778 7.778L4 19.556l7.778-7.778zm0 0l7.778 7.778-7.778-7.778L19.556 4l-7.778 7.778z" stroke="#000" strokeWidth="2" fill="none" fillRule="evenodd" strokeLinecap="round" strokeLinejoin="round"></path></svg>
+                    </div>
+                </div>
                     <hr className="selectedLine"></hr>
                     <div className="selectedListingPrice">
                         ${this.props.selectedListing.price}
@@ -43,9 +50,6 @@ class ListingShow extends React.Component {
                     <div className="selectedListingDescription">
                         {this.props.selectedListing.description}
                     </div>
-                </div>
-                <div>
-                    <div className="selectedX" onClick={this.props.closeModal}>X</div>
                 </div>
             </div>
         )
