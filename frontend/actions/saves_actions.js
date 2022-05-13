@@ -44,9 +44,11 @@ export const createSave = (save) => (dispatch) => {
     )
 }
 
-export const deleteSave = (saveId) => (dispatch) => (
-    SaveAPIUtil.deleteSave(saveId).then(
-        () => dispatch(removeSave(saveId)),
-        (errors) => dispatch(receiveSaveErrors(errors.responseJSON))
+export const deleteSave = (saveId) => (dispatch) => {
+    return (
+        SaveAPIUtil.deleteSave(saveId).then(
+            (saveId) => dispatch(removeSave(saveId)),
+            (errors) => dispatch(receiveSaveErrors(errors.responseJSON))
+            )
     )
-)
+}

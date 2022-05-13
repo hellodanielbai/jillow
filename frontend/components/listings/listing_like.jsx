@@ -22,16 +22,16 @@ class ListingLike extends React.Component {
 
     update(like) {
         // e.preventDefault()
+        console.log("state", this.state.entities)
         if (like.length === 0) {
             this.props.createSave(this.state)
         } else {
-            this.props.deleteSave(this.state)
+            this.props.deleteSave(like[0].id)
         }
     }
 
     render() {
         let like = this.props.saves.filter(save => this.props.listing.id === save.listingId)
-        console.log("like", like)
         let likeImage;
         // let likeImage = (<div> <AiOutlineHeart className="likedImage"/> </div>)
         // likes(like => {
@@ -41,7 +41,6 @@ class ListingLike extends React.Component {
         //         likeImage = (<div> <AiOutlineHeart className="unlikedImage"/> </div>)
         //     }
         // })
-
         if (like.length > 0) {
             likeImage = (<div> <AiOutlineHeart className="likedImage"/> </div>)
         } else {
@@ -51,7 +50,7 @@ class ListingLike extends React.Component {
         return (
             <div className="listing-like">
                 <label>
-                    <div onClick={(like) => this.update(like)} >
+                    <div onClick={() => this.update(like)} >
                         { likeImage }
                         {/* <AiOutlineHeart className="likedImage"/> */}
                     </div>

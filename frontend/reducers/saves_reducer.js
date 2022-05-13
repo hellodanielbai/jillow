@@ -3,7 +3,6 @@ import { RECEIVE_ALL_SAVES, RECEIVE_SAVE, DELETE_SAVE } from "../actions/saves_a
 const savesReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     let nextState = Object.assign({}, oldState);
-
     switch (action.type) {
         case RECEIVE_ALL_SAVES:
             return action.saves;
@@ -11,7 +10,7 @@ const savesReducer = (oldState = {}, action) => {
             nextState[action.save.id] = action.save;
             return nextState;
         case DELETE_SAVE:
-            delete nextState[action.saveId];
+            delete nextState[action.saveId.id];
             return nextState;
         default:
             return oldState;
